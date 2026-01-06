@@ -1,0 +1,11 @@
+name: gengen-theme-minimal
+version: 1.0.0
+description: "Lightweight minimal theme for new GenGen sites"
+license: MIT
+author: GenGen Team
+layouts:
+  - default
+  - page
+  - post
+sass:
+  input: assets/css/main.scss

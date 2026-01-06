@@ -1,0 +1,9 @@
+name: gengen-theme-starter
+version: 1.0.0
+description: "A full-featured starter theme for GenGen sites with aurora styling"
+license: MIT
+author: GenGen Team
+layouts:
+  - default
+  - page
+  - post
