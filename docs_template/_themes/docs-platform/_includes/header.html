@@ -1,0 +1,36 @@
+{% assign is_home = include.is_home | default: false %}
+{% assign site_title = site.title | default: site.data.site.name | default: 'GenGen' %}
+{% assign site_tagline = site.data.site.tagline | default: site.description %}
+<header class="docs-header{% if is_home %} docs-header--home{% endif %}">
+  <div class="docs-header__inner">
+    <div class="docs-header__brand">
+      <a class="brand-link" href="{{ "/" | relative_url }}">
+        <span class="brand-logo">📘</span>
+        <span class="brand-text">
+          <span class="brand-title">{{ site_title }}</span>
+          {% if site_tagline %}
+            <span class="brand-subtitle">{{ site_tagline }}</span>
+          {% endif %}
+        </span>
+      </a>
+    </div>
+
+    {% if site.data.site.main_navigation %}
+    <nav class="docs-header__nav" aria-label="Primary">
+      {% for item in site.data.site.main_navigation %}
+        <a href="{% if item.external %}{{ item.url }}{% else %}{{ item.url | relative_url }}{% endif %}"
+           class="nav-link{% if page.url == item.url %} is-active{% endif %}">
+          {{ item.title }}
+        </a>
+      {% endfor %}
+    </nav>
+    {% endif %}
+
+    <div class="docs-header__actions">
+      {% render 'search' %}
+      <button class="theme-toggle" type="button" aria-label="Toggle theme">
+        <span class="theme-toggle__icon">🌗</span>
+      </button>
+    </div>
+  </div>
+</header>

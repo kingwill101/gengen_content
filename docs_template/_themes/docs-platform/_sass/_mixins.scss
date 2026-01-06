@@ -1,0 +1,92 @@
+@use 'variables' as *;
+
+@mixin responsive($breakpoint) {
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-start {
+  display: flex;
+  align-items: center;
+}
+
+@mixin container {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: 0 $spacing-xl;
+}
+
+@mixin heading-base {
+  font-family: $font-family-display;
+  font-weight: $font-weight-semibold;
+  line-height: 1.15;
+  margin-bottom: $spacing-md;
+  color: $text-color;
+  letter-spacing: -0.02em;
+}
+
+@mixin nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-xs;
+  padding: $spacing-sm $spacing-md;
+  border-radius: $border-radius-sm;
+  font-weight: $font-weight-medium;
+  color: $text-muted;
+  text-decoration: none;
+  transition: color $transition-base, background-color $transition-base;
+
+  &:hover {
+    color: $primary-color;
+    background-color: rgba($primary-color, 0.08);
+  }
+
+  &.is-active {
+    color: $primary-color;
+    background-color: rgba($primary-color, 0.14);
+  }
+}
+
+@mixin card {
+  background-color: $surface-color;
+  border: 1px solid rgba($border-color, 0.9);
+  border-radius: $border-radius;
+  box-shadow: $shadow-sm;
+}
+
+@mixin button-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-xs;
+  padding: $spacing-sm $spacing-lg;
+  border-radius: $border-radius;
+  font-weight: $font-weight-semibold;
+  border: none;
+  cursor: pointer;
+  transition: transform $transition-fast, box-shadow $transition-fast;
+}
+
+@mixin button-primary {
+  @include button-base;
+  background-color: $primary-color;
+  color: white;
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: $shadow;
+  }
+}

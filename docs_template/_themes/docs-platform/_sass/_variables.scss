@@ -1,0 +1,74 @@
+// Colors
+$primary-color: #0b1220;
+$secondary-color: #475569;
+$accent-color: #2ec4b6;
+$success-color: #22c55e;
+$warning-color: #f59e0b;
+$danger-color: #ef4444;
+$text-color: #0b1220;
+$text-muted: #5b6473;
+$bg-color: #f6f8fb;
+$bg-muted: #eef2f6;
+$border-color: #dde4ec;
+$code-bg: #0b1220;
+$code-text: #e2e8f0;
+$surface-color: #ffffff;
+
+// Layout
+$container-max-width: 1280px;
+$sidebar-width: 260px;
+$toc-width: 220px;
+$header-height: 76px;
+
+// Spacing
+$spacing-xs: 0.25rem;
+$spacing-sm: 0.5rem;
+$spacing-md: 1rem;
+$spacing-lg: 1.5rem;
+$spacing-xl: 2rem;
+$spacing-2xl: 3rem;
+
+// Typography
+$font-family-base: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+$font-family-display: 'Fraunces', 'Iowan Old Style', 'Georgia', serif;
+$font-family-mono: 'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+$font-size-xs: 0.75rem;
+$font-size-sm: 0.875rem;
+$font-size-base: 1rem;
+$font-size-lg: 1.125rem;
+$font-size-xl: 1.25rem;
+$font-size-2xl: 1.5rem;
+$font-size-3xl: 1.75rem;
+$font-size-4xl: 2.25rem;
+$font-size-5xl: 3rem;
+
+// Font weights
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// Border radius
+$border-radius-sm: 6px;
+$border-radius: 12px;
+$border-radius-lg: 18px;
+
+// Transitions
+$transition-fast: 0.12s ease;
+$transition-base: 0.2s ease;
+$transition-slow: 0.3s ease;
+
+// Shadows
+$shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.06);
+$shadow: 0 14px 30px rgba(15, 23, 42, 0.1);
+$shadow-lg: 0 26px 60px rgba(8, 15, 30, 0.16);
+
+// Breakpoints
+$breakpoint-sm: 600px;
+$breakpoint-md: 900px;
+$breakpoint-lg: 1200px;
+
+// Z-index
+$z-index-header: 500;
+$z-index-overlay: 700;
+$z-index-modal: 900;

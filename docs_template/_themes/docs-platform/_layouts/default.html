@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% render 'head', site: site, page: page %}
+</head>
+{% assign is_home = page.url == '/' or page.layout == 'home' %}
+<body class="docs-body{% if is_home %} docs-body--home{% endif %}">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  {% render 'header', site: site, page: page, is_home: is_home %}
+
+  {% if is_home %}
+    <main id="main-content" class="docs-home">
+      <section class="home-hero">
+        <div class="home-hero__content">
+          <h1>{{ page.title | default: site.title }}</h1>
+          {% if page.description %}
+            <p class="home-hero__description">{{ page.description }}</p>
+          {% endif %}
+          {% if site.data.docs.navigation.quick_nav %}
+            <div class="home-hero__actions">
+              {% for action in site.data.docs.navigation.quick_nav %}
+                <a class="button button--primary" href="{% if action.external %}{{ action.url }}{% elsif action.url and action.url | slice: 0, 1 == '#' %}{{ action.url }}{% else %}{{ action.url | relative_url }}{% endif %}">
+                  {{ action.icon }} {{ action.title }}
+                </a>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+        <div class="home-hero__illustration">
+          <div class="hero-graphic"></div>
+        </div>
+      </section>
+
+      <section class="home-sections">
+        {{ content }}
+      </section>
+    </main>
+  {% else %}
+    <main id="main-content" class="docs-main">
+      {% render 'breadcrumbs', site: site, page: page %}
+
+      <div class="docs-layout">
+        {% render 'sidebar', site: site, page: page %}
+
+        <article class="docs-article">
+          {% render 'page-header', site: site, page: page %}
+          <div class="docs-article__body">
+            {{ content }}
+          </div>
+          {% render 'page-navigation', site: site, page: page %}
+        </article>
+
+        {% render 'toc', site: site, page: page %}
+      </div>
+    </main>
+  {% endif %}
+
+  {% render 'footer', site: site, page: page %}
+  {% render 'scripts', site: site, page: page %}
+</body>
+</html>
