@@ -6,16 +6,16 @@
   <body class="site-body">
     <header class="site-header">
       <div class="site-header__inner">
-        <a class="site-title" href="/">{{ site.config['title'] }}</a>
-        {% if site.config['description'] %}
-        <p class="site-tagline">{{ site.config['description'] }}</p>
+        <a class="site-title" href="/">{{ site.title }}</a>
+        {% if site.description %}
+        <p class="site-tagline">{{ site.description }}</p>
         {% endif %}
         <nav class="site-nav" aria-label="Primary">
           <a href="/"{% if page.url == '/' %} class="is-active"{% endif %}>Home</a>
           <a href="/about/"{% if page.url == '/about/' %} class="is-active"{% endif %}>About</a>
-          {% if site.posts.size > 0 %}
+          {% unless site.posts == empty %}
           <a href="/posts/"{% if page.url == '/posts/' %} class="is-active"{% endif %}>Posts</a>
-          {% endif %}
+          {% endunless %}
         </nav>
       </div>
     </header>
