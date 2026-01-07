@@ -1,0 +1,22 @@
+{% assign site_title = site.title | default: site.data.site.name | default: 'GenGen' %}
+<footer class="docs-footer">
+  <div class="docs-footer__inner">
+    <div class="docs-footer__brand">
+      <p>&copy; {{ 'now' | date: 'yyyy' }} {{ site_title }}. Built with GenGen.</p>
+      {% if site.data.site.version %}
+        <p class="docs-footer__version">Version {{ site.data.site.version }}</p>
+      {% endif %}
+    </div>
+    {% if site.data.docs.navigation.footer_nav %}
+    <nav class="docs-footer__nav" aria-label="Footer">
+      {% for item in site.data.docs.navigation.footer_nav %}
+        <a href="{% if item.external %}{{ item.url }}{% else %}{{ item.url | relative_url }}{% endif %}"
+           class="docs-footer__link"
+           {% if item.external %}target="_blank" rel="noopener"{% endif %}>
+          {{ item.title }}
+        </a>
+      {% endfor %}
+    </nav>
+    {% endif %}
+  </div>
+</footer>
