@@ -15,6 +15,3 @@ plugins:
       - LiquidPlugin
       - SassPlugin
       - PaginationPlugin
-
-# Scope the site to the `examples/docs` directory when building from repo root
-source: "examples/docs"

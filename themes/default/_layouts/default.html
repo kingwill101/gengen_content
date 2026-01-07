@@ -6,14 +6,14 @@
   <body class="site-body">
     <header class="site-header">
       <div class="site-header__inner">
-        <a class="site-title" href="{{ "/" | relative_url }}">{{ site.config['title'] }}</a>
-        {% if site.config['description'] %}
-        <p class="site-tagline">{{ site.config['description'] }}</p>
+        <a class="site-title" href="{{ "/" | relative_url }}">{{ site.title }}</a>
+        {% if site.description %}
+        <p class="site-tagline">{{ site.description }}</p>
         {% endif %}
         <nav class="site-nav" aria-label="Primary">
           <a href="{{ "/" | relative_url }}"{% if page.url == '/' %} class="is-active"{% endif %}>Home</a>
           <a href="{{ "/about/" | relative_url }}"{% if page.url == '/about/' %} class="is-active"{% endif %}>About</a>
-          {% if site.posts.size > 0 %}
+          {% if site.posts %}
           <a href="{{ "/posts/" | relative_url }}"{% if page.url == '/posts/' %} class="is-active"{% endif %}>Posts</a>
           {% endif %}
         </nav>
